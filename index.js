@@ -50,11 +50,12 @@ async function run() {
 
     // bookings database code
     app.get('/bookings', async(req, res)=> {
-      console.log(req.query.email);
+      console.log(req.query.customerEmail);
       let query = {};
-      if(req.query?.email){
-        query = {email: req.query.email}
+      if(req.query?.customerEmail){
+        query = {customerEmail: req.query.customerEmail}
       }
+      console.log(query);
       const result = await bookingCollection.find(query).toArray();
       res.send(result);
     })
