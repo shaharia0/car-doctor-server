@@ -81,7 +81,7 @@ async function run() {
       const decoded = req.decoded;
       console.log('come back after verify', decoded);
 
-      if(decoded.email !== req.query.email){
+      if(decoded.customerEmail !== req.query.customerEmail){
         return res.status(403).send({error: 1, message: 'forbidden access'})
       }
       // console.log(req.headers.authorization);
